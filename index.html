@@ -140,11 +140,57 @@
        CSS:ABOUT（About 區塊樣式）
        ------------------------------------------------------------ */
     /* CSS:ABOUT-START */
+
     .section-about {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .about-content {
       display: flex;
       flex-direction: column;
       gap: 1rem;
     }
+
+    .about-list {
+      padding-left: 1.2rem;
+      margin: 0.5rem 0 1.5rem 0;
+    }
+
+    .about-list li {
+      margin-bottom: 0.5rem;
+    }
+
+    .about-actions {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.6rem 1.2rem;
+      border-radius: 4px;
+      background-color: #1f2d3a;
+      color: #ffffff;
+      font-size: 0.9rem;
+      border: 1px solid rgba(255,255,255,0.2);
+      transition: background-color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .btn:hover {
+      background-color: #2d3c4a;
+      border-color: rgba(255,255,255,0.35);
+    }
+
+    .about-img-wrap {
+      width: 100%;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
     /* CSS:ABOUT-END */
 
 
@@ -195,12 +241,14 @@
        ------------------------------------------------------------ */
     /* CSS:RWD-START */
     @media (min-width: 768px) {
-      .section-about,
-      .section-projects {
+
+      .section-about {
         flex-direction: row;
+        align-items: center;
       }
-      .section-about > div,
-      .section-projects > div {
+
+      .about-content,
+      .about-img-wrap {
         flex: 1;
       }
 
@@ -248,8 +296,8 @@
 
           <div class="hero-img-wrap">
             <img 
-              src="https://source.unsplash.com/600x400/?developer,laptop" 
-              alt="在筆電前撰寫程式碼的前端開發者" 
+              src="https://unsplash.com/photos/a-desk-with-sticky-notes-attached-to-the-wall-al-2FXS_Uew" 
+              alt="運用工具推導產品策略" 
               loading="lazy">
           </div>
 
@@ -265,10 +313,34 @@
            ========================================= -->
       <!-- SECTION:ABOUT-START -->
       <section id="about" class="section section-about" aria-labelledby="about-heading">
-        <div class="container">
-          <h2 id="about-heading" class="section-title">關於我（占位內容）</h2>
-          <p>這裡目前是 About 區的占位內容。未來會使用 Section SDD 的 Prompt 產生正式內容。</p>
-          <p>請開發者之後將新的 section 程式碼「整段」貼在這兩個註解中間，完全取代現在這一區。</p>
+        <div class="container section-about">
+
+          <div class="about-content">
+            <h2 id="about-heading" class="section-title">關於我</h2>
+
+            <p>我目前擔任 PM，主要負責產品策略、數據分析與用戶訪談，專注於理解需求並將洞察轉化為可落地的產品方向。</p>
+
+            <p>我的背景涵蓋數位行銷與商務開發，重視跨團隊溝通，並擅長將市場 insights 融合進產品規劃之中，協助做出更貼近使用者與商業目標的決策。</p>
+
+            <ul class="about-list">
+              <li>能以市場洞察與用戶需求快速對齊產品方向</li>
+              <li>擅長以數據拆解問題、找出可行性高的解決方案</li>
+              <li>重視溝通協作，可在產品、行銷與商務間搭起明確對齊</li>
+            </ul>
+
+            <div class="about-actions">
+              <a href="#projects" class="btn">查看作品集</a>
+              <a href="#contact" class="btn">聯絡我</a>
+            </div>
+          </div>
+
+          <div class="about-img-wrap">
+            <img 
+              src="https://unsplash.com/photos/golden-king-stands-out-on-a-chessboard-qgDgqMtqx8s" 
+              alt="象徵策略規劃與團隊溝通的示意照片"
+              loading="lazy">
+          </div>
+
         </div>
       </section>
       <!-- SECTION:ABOUT-END -->
@@ -337,3 +409,4 @@
   </div>
 </body>
 </html>
+
